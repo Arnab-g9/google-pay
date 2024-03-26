@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Gloock&family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Baloo Paaji 2";
 }
 html,
 body {
@@ -20,6 +22,16 @@ body {
   align-items: center;
   justify-content: center;
 }
+.app .logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.app .logo-container p {
+  font-size: 20px;
+}
 .app .logo {
   width: 110px;
   padding: 2px;
@@ -30,7 +42,7 @@ body {
   justify-content: center;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid rgb(223, 220, 220);
+  border: 2px solid rgb(89, 89, 89);
   cursor: pointer;
 }
 
@@ -39,7 +51,22 @@ body {
   grid-template-columns: 50% 50%;
   width: 100%;
   height: 100%;
+  background: radial-gradient(
+    rgba(137, 171, 245, 0.37),
+    rgba(245, 247, 252, 1)
+  );
+  transition: background 1s, color 0.5s;
 }
+
+.dark {
+  /* background: radial-gradient(
+    circle 815px at 23.4% -21.8%,
+    rgba(9, 29, 85, 1) 0.2%,
+    rgba(0, 0, 0, 1) 100.2%
+  ); */
+  background: rgb(46, 46, 46);
+}
+
 .app2 .left {
   /* background-color: green; */
   display: flex;
@@ -54,62 +81,279 @@ body {
 .app2 .left .icon-container i {
   font-size: 30px;
   cursor: pointer;
+  background: white;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px rgb(157, 157, 157);
+  transition: linear 0.5s all;
+}
+.app2 .left .icon-container i:hover {
+  box-shadow: none;
+  opacity: 0.8;
 }
 .app2 .left .user-list {
-  border: 1px solid black;
-  width: 450px;
+  /* border: 1px solid black; */
+  width: 500px;
   list-style: none;
   padding: 40px;
   height: 350px;
   overflow-y: auto;
-  margin-top: 30px;
-  border-radius: 50px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: rgb(234, 234, 234, 0.2);
+  /* background-color: transparent; */
 }
 .app2 .left .user-list li {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  /* border: 1px solid black; */
+  padding: 5px 15px;
+  border-radius: 10px;
+  transition: box-shadow 0.5s;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+}
+
+.app2 .left .user-list li:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.app2 .left .user-list li input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 5px;
+  background-color: #d5d5d5;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+}
+.app2 .left .user-list li input[type="checkbox"]:after {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00c";
+  font-weight: 900;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  display: none;
+}
+.app2 .left .user-list li input[type="checkbox"]:hover {
+  background-color: #a5a5a5;
+}
+.app2 .left .user-list li input[type="checkbox"]:checked {
+  background-color: #a3ffcd;
+}
+.app2 .left .user-list li input[type="checkbox"]:checked:after {
+  display: block;
 }
 .app2 .left .user-list li img {
   border-radius: 50%;
+  border: 1px solid rgb(119, 119, 119);
+}
+.app2 .left .user-list li .user-info {
+  width: 200px;
+}
+.app2 .left .user-list li .icons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  /* width: 100px; */
+}
+.app2 .left .user-list li .icons-container i {
+  cursor: pointer;
+  font-size: 20px;
 }
 .app2 .left .user-add-form {
-  width: 450px;
+  width: 500px;
   margin-top: 30px;
-  padding: 20px 0;
-  border-radius: 50px;
-  border: 1px solid black;
+  border-radius: 10px;
+  /* border: 1px solid black; */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 30px;
+  background-color: antiquewhite;
 }
 .app2 .left .user-add-form form {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 .app2 .left .user-add-form form div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.app2 .left .user-add-form form div input {
+  width: 250px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
 }
 .app2 .left .user-add-form form .btn {
+  width: 100%;
   justify-content: flex-end;
 }
 .app2 .left .user-list::-webkit-scrollbar {
   display: none;
 }
-.app2 .left .button {
+.app2 .left .btn {
   display: flex;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 450px;
-  justify-content: flex-end;
-  padding-right: 30px;
+  justify-content: space-between;
+}
+button {
+  padding: 5px 30px;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #ffca85;
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 .app2 .right {
   /* background-color: red; */
   display: flex;
   flex-direction: column;
+  align-items: center;
+  height: 100%;
+  /* justify-content: center; */
+}
+
+.app2 .right .light-dark-mode {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+  align-items: center;
+}
+
+.app2 .right .light-dark-mode i {
+  font-size: 25px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 5px rgb(157, 157, 157);
+  transition: box-shadow 0.5s, opacity 0.5s;
+  cursor: pointer;
+}
+
+.app2 .right .light-dark-mode i:hover {
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+.split-expense-form-container {
+  width: 70%;
+  height: 80%;
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  margin-top: 30px;
+  /* border: 1px solid black; */
+
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.split-expense-form-container .sections {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  height: 40px;
+  align-items: center;
+  padding: 0px 15px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: box-shadow 0.5s;
+}
+.split-expense-form-container .sections:hover {
+  box-shadow: none;
+}
+.split-expense-form-container .sections .icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.split-expense-form-container .users-list {
+  width: 90%;
+  list-style: none;
+  padding: 40px;
+  height: 400px;
+  overflow-y: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: rgb(234, 234, 234, 0.3);
+}
+.split-expense-form-container .users-list::-webkit-scrollbar {
+  display: none;
+}
+
+.split-expense-form-container .users-list .user {
+  /* display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  /* border: 1px solid black; */
+  padding: 5px 10px;
+  border-radius: 10px;
+  transition: box-shadow 0.5s;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+}
+.split-expense-form-container .users-list .user:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.split-expense-form-container .users-list .user .user-details {
+  /* width: 150px; */
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+.split-expense-form-container .users-list .user .user-details img {
+  border-radius: 50%;
+}
+.split-expense-form-container .users-list .user .input-icon-container {
+  display: flex;
+  flex: 2;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.split-expense-form-container .what-for {
+  display: flex;
+  width: 50%;
+  height: 40px;
+}
+.split-expense-form-container .what-for input[type="text"] {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
