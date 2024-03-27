@@ -44,6 +44,9 @@ body {
   overflow: hidden;
   border: 2px solid rgb(89, 89, 89);
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .app2 {
@@ -100,7 +103,10 @@ body {
   overflow-y: auto;
   margin-top: 10px;
   border-radius: 10px;
-  background-color: rgb(234, 234, 234, 0.2);
+  background-color: rgba(179, 176, 176, 0.2);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
   /* background-color: transparent; */
 }
 .app2 .left .user-list li {
@@ -123,9 +129,9 @@ body {
 .app2 .left .user-list li input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
-  height: 15px;
-  width: 15px;
-  border-radius: 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
   background-color: #d5d5d5;
   cursor: pointer;
   display: flex;
@@ -230,6 +236,7 @@ button {
   align-items: center;
   height: 100%;
   /* justify-content: center; */
+  position: relative;
 }
 
 .app2 .right .light-dark-mode {
@@ -258,7 +265,7 @@ button {
 
 .split-expense-form-container {
   width: 70%;
-  height: 80%;
+  height: 75%;
   background-color: #8bc6ec;
   background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
   margin-top: 30px;
@@ -294,11 +301,13 @@ button {
   width: 90%;
   list-style: none;
   padding: 40px;
-  height: 400px;
+  height: 350px;
   overflow-y: auto;
   margin-top: 10px;
   border-radius: 10px;
   background-color: rgb(234, 234, 234, 0.3);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 .split-expense-form-container .users-list::-webkit-scrollbar {
   display: none;
@@ -356,4 +365,19 @@ button {
   border-bottom: 2px solid rgb(0, 0, 0);
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+  outline: none;
+}
+
+.app2 .right footer {
+  font-size: 15px;
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  left: -18%;
+  background-color: rgb(62, 62, 62);
+  padding: 5px 30px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 10px;
+  cursor: pointer;
 }

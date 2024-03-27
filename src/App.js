@@ -67,6 +67,15 @@ export default function App() {
   useEffect(() => {
     setSelectedUsers(users.filter((user) => user.checked));
   }, [users]);
+
+  function handleDeleteSelectedUsers(id) {
+    if (selectedUsers.length <= 2) setShowGroupSplitForm(false);
+    setSelectedUsers((selectedUsers) =>
+      selectedUsers.filter((user) => user.id !== id)
+    );
+  }
+  // console.log(selectedUsers.length);
+  // console.log(showGroupSplitForm);
   return (
     <div className={splitClick ? `app2 ${mode ? "" : "dark"}` : `app`}>
       {!splitClick ? <Logo onSplitClick={handleSplitClick} /> : null}
@@ -108,9 +117,13 @@ export default function App() {
             </div>
             {showGroupSplitForm && selectedUsers.length > 1 && (
               <SplitExpenseFormContainer>
-                <GroupExpense selectedUsers={selectedUsers} />
+                <GroupExpense
+                  selectedUsers={selectedUsers}
+                  onDeleteUser={handleDeleteSelectedUsers}
+                />
               </SplitExpenseFormContainer>
             )}
+            <footer>[ &nbsp;"Made with 💖 and Effort by Arnab" &nbsp;]</footer>
           </div>
         </>
       )}
